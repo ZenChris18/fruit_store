@@ -6,7 +6,6 @@ class Program
     {
         ShowMenu();
         GetUserInput();
-        
     }
 
     static void ShowMenu()
@@ -41,16 +40,17 @@ class Program
     // Greeting method
     static void Price(string name)
     {
+        string lowerName = name.ToLower();
         char symbol = '$';
-        if (name == "Apple")
+        if (lowerName == "Apple")
         {
             Console.WriteLine("The price of apple is 70" + symbol);
         }
-        else if (name == "Mango")
+        else if (lowerName == "Mango")
         {
             Console.WriteLine("The price of mango is 50" + symbol);
         }
-        else if (name == "Banana")
+        else if (lowerName == "Banana")
         {
             Console.WriteLine("The price of Banana is 45" + symbol);
         }
