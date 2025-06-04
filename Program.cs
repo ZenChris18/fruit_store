@@ -4,18 +4,40 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.Write("What Fruit do you want to buy?: ");
-        string? fruit = Console.ReadLine();
-        if (fruit != null)
-        {
-            Price(fruit);
-        }
-        else
-        {
-            Console.WriteLine("No fruit entered");
-        }
+        ShowMenu();
+        GetUserInput();
+        
     }
 
+    static void ShowMenu()
+    {
+        Console.WriteLine("Welcome to the Fruit shop!");
+        Console.WriteLine("Available Fruits: ");
+        Console.WriteLine("Apple");
+        Console.WriteLine("Mango");
+        Console.WriteLine("Banana");
+    }
+
+    static void GetUserInput()
+    {
+        while (true)
+        {
+            Console.Write("What fruit would you like to buy: (type exit to stop program): ");
+            String? fruit = Console.ReadLine();
+            if (fruit == "exit")
+            {
+                break;
+            }
+            else if (fruit != null)
+            {
+                Price(fruit);
+            }
+            else
+            {
+                Console.WriteLine("No fruit entered");
+            }
+        }
+    }
     // Greeting method
     static void Price(string name)
     {
@@ -27,6 +49,10 @@ class Program
         else if (name == "Mango")
         {
             Console.WriteLine("The price of mango is 50" + symbol);
+        }
+        else if (name == "Banana")
+        {
+            Console.WriteLine("The price of Banana is 45" + symbol);
         }
         else
         {
