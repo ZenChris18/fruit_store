@@ -42,15 +42,15 @@ class Program
     {
         string lowerName = name.ToLower();
         char symbol = '$';
-        if (lowerName == "Apple")
+        if (lowerName == "apple")
         {
             Console.WriteLine("The price of apple is 70" + symbol);
         }
-        else if (lowerName == "Mango")
+        else if (lowerName == "mango")
         {
             Console.WriteLine("The price of mango is 50" + symbol);
         }
-        else if (lowerName == "Banana")
+        else if (lowerName == "banana")
         {
             Console.WriteLine("The price of Banana is 45" + symbol);
         }
