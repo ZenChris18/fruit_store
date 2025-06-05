@@ -5,7 +5,7 @@ class Program
     static Dictionary<string, int> prices = new Dictionary<string, int>
      {
             {"apple", 50},
-            { "mango", 70},
+            {"mango", 70},
             {"banana", 45}
     };
 
