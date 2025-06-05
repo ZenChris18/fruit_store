@@ -2,6 +2,14 @@
 
 class Program
 {
+    static Dictionary<string, int> prices = new Dictionary<string, int>
+     {
+            {"apple", 50},
+            { "mango", 70},
+            {"banana", 45}
+    };
+
+
     static void Main(string[] args)
     {
         ShowMenu();
@@ -12,9 +20,10 @@ class Program
     {
         Console.WriteLine("Welcome to the Fruit shop!");
         Console.WriteLine("Available Fruits: ");
-        Console.WriteLine("Apple");
-        Console.WriteLine("Mango");
-        Console.WriteLine("Banana");
+        foreach (var key in prices.Keys)
+        {
+            Console.WriteLine(key);
+        }
     }
 
     static void GetUserInput()
@@ -37,26 +46,19 @@ class Program
             }
         }
     }
+
     // Greeting method
     static void Price(string name)
     {
         string lowerName = name.ToLower();
         char symbol = '$';
-        if (lowerName == "apple")
+        if (prices.ContainsKey(lowerName))
         {
-            Console.WriteLine("The price of apple is 70" + symbol);
-        }
-        else if (lowerName == "mango")
-        {
-            Console.WriteLine("The price of mango is 50" + symbol);
-        }
-        else if (lowerName == "banana")
-        {
-            Console.WriteLine("The price of Banana is 45" + symbol);
+            Console.WriteLine("The price of " + name + " is " + prices[lowerName] + symbol);
         }
         else
         {
-            Console.WriteLine("Fruit not available, try again");
+            Console.WriteLine("That fruit is not available");
         }
     }
 
